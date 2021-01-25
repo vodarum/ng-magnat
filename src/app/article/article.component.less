@@ -1,0 +1,231 @@
+//  Section
+.section {
+    padding: 0 250px;
+
+    &__zone {
+        padding: 10px 0;
+    }
+
+    &__title {
+        text-align : center;
+        font-size  : 30px;
+        font-weight: bold;
+    }
+}
+
+// Buttons
+
+.button {
+    padding      : 10px;
+    border       : 0;
+    border-radius: 5px;
+    color        : #ffffff;
+
+    &:hover {
+        outline: none;
+        cursor : pointer;
+
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &-add {
+        background-color: green;
+
+        &:hover {
+            background-color: darken(green, 10%);
+        }
+    }
+
+    &-update {
+        background-color: orange;
+
+        &:hover {
+            background-color: darken(orange, 10%);
+        }
+    }
+
+    &-delete {
+        background-color: red;
+        margin-left     : 10px;
+
+        &:hover {
+            background-color: darken(red, 10%);
+        }
+    }
+
+    &-save {
+        margin-right    : 10px;
+        background-color: #3a37ee;
+
+        &:hover {
+            background-color: darken(#3a37ee, 10%);
+        }
+    }
+
+    &-close {
+        background-color: #7e7e7e;
+
+        &:hover {
+            background-color: darken(#7e7e7e, 10%);
+        }
+    }
+
+}
+
+// Articles List
+
+.articles-list {
+
+    &__header {
+        background-color: darkgrey;
+        display         : flex;
+        justify-content : space-between;
+        align-items     : center;
+        font-weight     : bold;
+    }
+
+    &__col {
+        padding   : 10px 0;
+        text-align: center;
+    }
+
+    &__row {
+        border-left    : 1px solid #c7c7c7;
+        border-right   : 1px solid #c7c7c7;
+        border-bottom  : 1px solid #c7c7c7;
+        display        : flex;
+        justify-content: space-between;
+        align-items    : center;
+
+        &>.col-action {
+            display        : flex;
+            justify-content: center;
+        }
+    }
+}
+
+.col-id {
+    flex-basis: 5%;
+}
+
+.col-title {
+    flex-basis: 20%;
+}
+
+.col-description {
+    flex-basis: 40%;
+}
+
+.col-date {
+    flex-basis: 10%;
+}
+
+.col-action {
+    flex-basis: 25%;
+
+    // &__item {}
+}
+
+// Editor
+
+.editor {
+    width      : 500px;
+    margin-left: 250px;
+    border     : 1px solid #c7c7c7;
+
+
+    &__section {
+        padding: 10px;
+
+        &:not(:last-child) {
+            border-bottom: 1px solid #c7c7c7;
+        }
+    }
+
+    &__title {
+        font-size  : 16px;
+        font-weight: bold;
+    }
+
+    // &__input-area {}
+
+    &__input-zone {
+        padding: 10px 0;
+
+        &>label {
+            display      : block;
+            margin-bottom: 10px;
+            font-size    : 12px;
+            font-weight  : bold;
+        }
+
+        &>input {
+            width        : 100%;
+            padding      : 10px 5px;
+            font-size    : 12px;
+            box-sizing   : border-box;
+            border       : 1px solid #dadada;
+            border-radius: 5px;
+
+            &:focus {
+                outline         : none;
+                background-color: #ececec;
+            }
+
+            &[placeholder] {
+                font-family: 'Montserrat', sans-serif;
+            }
+
+            &::-moz-placeholder {
+                font-family: 'Montserrat', sans-serif;
+            }
+
+            &:-moz-placeholder {
+                font-family: 'Montserrat', sans-serif;
+            }
+
+            &:-ms-input-placeholder {
+                font-family: 'Montserrat', sans-serif;
+            }
+        }
+
+        &>textarea {
+            width        : 100%;
+            padding      : 10px 5px;
+            font-size    : 12px;
+            box-sizing   : border-box;
+            border       : 1px solid #dadada;
+            border-radius: 5px;
+
+            &:focus {
+                outline         : none;
+                background-color: #ececec;
+            }
+
+            &[placeholder] {
+                font-family: 'Montserrat', sans-serif;
+            }
+
+            &::-moz-placeholder {
+                font-family: 'Montserrat', sans-serif;
+            }
+
+            &:-moz-placeholder {
+                font-family: 'Montserrat', sans-serif;
+            }
+
+            &:-ms-input-placeholder {
+                font-family: 'Montserrat', sans-serif;
+            }
+        }
+    }
+
+    &__button-area {
+        display        : flex;
+        justify-content: flex-end;
+        align-items    : center;
+    }
+}

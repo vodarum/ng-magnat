@@ -1,0 +1,98 @@
+<section class="section">
+    <div class="section__zone">
+        <h2 class="section__title">
+            Список статей
+        </h2>
+    </div>
+    <div class="section__zone">
+        <button class="button button-add" type="button" (click)="addArticle()">
+            Добавить статью
+        </button>
+    </div>
+    <div class="section__zone">
+        <div class="articles-list">
+            <div class="articles-list__header">
+                <div class="articles-list__col col-id">
+                    Id
+                </div>
+                <div class="articles-list__col col-title">
+                    Title
+                </div>
+                <div class="articles-list__col col-description">
+                    Description
+                </div>
+                <div class="articles-list__col col-date">
+                    Date
+                </div>
+                <div class="articles-list__col col-action">
+                    Action
+                </div>
+            </div>
+            <div class="articles-list__content" *ngIf="articlesList.length; else noArticles">
+                <div class="articles-list__row" *ngFor="let article of articlesList; let i = index">
+                    <div class="articles-list__col col-id">
+                        {{ article.id }}
+                    </div>
+                    <div class="articles-list__col col-title">
+                        {{ article.title }}
+                    </div>
+                    <div class="articles-list__col col-description">
+                        {{ article.description }}
+                    </div>
+                    <div class="articles-list__col col-date">
+                        {{ article.date | date: 'dd.MM.yyyy HH:mm:ss' }}
+                    </div>
+                    <div class="articles-list__col col-action">
+                        <div class="col-action__item">
+                            <button class="button button-update" type="button" (click)="updateArticle(article.id)">
+                                Редактировать
+                            </button>
+                        </div>
+                        <div class="col-action__item">
+                            <button class="button button-delete" type="button" (click)="deleteArticle(article.id)">
+                                Удалить
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <ng-template #noArticles>
+                <p style="text-align: center;">Статьи отсутствуют</p>
+            </ng-template>
+
+        </div>
+    </div>
+</section>
+<div class="editor" *ngIf="hidden">
+    <div class="editor__section">
+        <p class="editor__title">
+            Карточка редактирования статьи
+        </p>
+    </div>
+    <div class="editor__section">
+        <div class="editor__input-area">
+            <div class="editor__input-zone">
+                <label for="input_title">Заголовок</label>
+                <input type="text" name="" id="input_title" placeholder="Введите заголовок статьи" autocomplete="off"
+                    [(ngModel)]="title">
+            </div>
+            <div class="editor__input-zone">
+                <label for="input_description">Описание</label>
+                <textarea name="" id="input_description" autocomplete="off" cols="30" rows="5"
+                    placeholder="Введите описание статьи" [(ngModel)]="description">
+                </textarea>
+            </div>
+        </div>
+    </div>
+    <div class="editor__section">
+        <div class="editor__button-area">
+            <button class="button button-save" type="button" [(ngModel)]="id" ngDefaultControl (click)="saveArticle()">
+                Сохранить
+            </button>
+            <button class="button button-close" type="button" (click)="closeEditor()">
+                Закрыть
+            </button>
+        </div>
+    </div>
+</div>
